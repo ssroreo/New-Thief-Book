@@ -1,0 +1,130 @@
+{
+  "name": "New Thief Book",
+  "displayName": "new-thief-book",
+  "description": "",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:new-thief-book.helloWorld"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssroreo/new-thief-book"
+  },
+  "publisher": "Hardy",
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "new-thief-book.displayCode",
+        "title": "new-thief-book.初始化键"
+      },
+      {
+        "command": "new-thief-book.getPreviousPage",
+        "title": "new-thief-book.上一页"
+      },
+      {
+        "command": "new-thief-book.getNextPage",
+        "title": "new-thief-book.下一页"
+      },
+      {
+        "command": "new-thief-book.getJumpingPage",
+        "title": "new-thief-book.快捷翻页"
+      },
+      {
+        "command": "new-thief-book.reloadBook",
+        "title": "new-thief-book.重新加载（更换书籍时使用）"
+      },
+      {
+        "command": "new-thief-book.addBookMark",
+        "title": "new-thief-book.添加书签"
+      },
+      {
+        "command": "new-thief-book.showBookMarkList",
+        "title": "new-thief-book.打开书签列表"
+      },
+      {
+        "command": "new-thief-book.clickNextPage",
+        "title": "new-thief-book.鼠标点击打开下一页"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "new-thief-book.getPreviousPage",
+        "key": "ctrl+alt+,",
+        "mac": "cmd+,"
+      },
+      {
+        "command": "new-thief-book.getNextPage",
+        "key": "ctrl+alt+.",
+        "mac": "cmd+."
+      },
+      {
+        "command": "new-thief-book.getJumpingPage",
+        "key": "ctrl+alt+;",
+        "mac": "cmd+;"
+      },
+      {
+        "command": "new-thief-book.displayCode",
+        "key": "ctrl+m",
+        "mac": "cmd+m"
+      },
+      {
+        "command": "new-thief-book.addBookMark",
+        "key": "ctrl+alt+'",
+        "mac": "cmd+'"
+      }
+    ],
+    "configuration": {
+      "title": "New Thief Book",
+      "properties": {
+        "new-thief-book.currPageNumber": {
+          "type": "number",
+          "default": 1,
+          "description": "当前小说页数(支持跳转) & Pages of Current Novels (Support jumping)"
+        },
+        "new-thief-book.pageSize": {
+          "type": "number",
+          "default": 50,
+          "description": "每页文字数量 & Number of text per page"
+        },
+        "new-thief-book.isEnglish": {
+          "type": "boolean",
+          "default": false,
+          "description": "是否为英文书籍？ & Is it an English book？"
+        },
+        "new-thief-book.lineBreak": {
+          "type": "string",
+          "default": " ",
+          "description": "换行分隔符号，默认一个空格 & Line Break Separation Symbol,Default a space"
+        },
+        "new-thief-book.filePath": {
+          "type": "string",
+          "default": "/Users/chenfeiyu/Downloads/song_of_ice_and_fire.txt",
+          "description": "TXT格式小说绝对路径 & Absolute Path of TXT Format Novels"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "eslint": "^8.6.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.1.3",
+    "typescript": "^4.5.4",
+    "@vscode/test-electron": "^2.0.3"
+  }
+}
