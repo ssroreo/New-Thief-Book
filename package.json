@@ -1,8 +1,8 @@
 {
   "name": "New-Thief-Book",
   "displayName": "new-thief-book",
-  "description": "",
-  "version": "1.0.0",
+  "description": "可以鼠标单击翻页,双击隐藏的better-thief-book",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -17,6 +17,7 @@
     "url": "https://github.com/ssroreo/New-Thief-Book"
   },
   "publisher": "Hardy",
+  "icon": "images/icon.png",
   "main": "./src/extension.js",
   "contributes": {
     "commands": [
