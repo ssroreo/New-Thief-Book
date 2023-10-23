@@ -9,6 +9,13 @@
   "categories": [
     "Other"
   ],
+	"keywords": [
+		"txt",
+		"book",
+		"小说",
+		"神器",
+		"摸鱼"
+	],
   "activationEvents": [
     "onCommand:new-thief-book.helloWorld"
   ],
