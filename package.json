@@ -2,7 +2,7 @@
   "name": "New-Thief-Book",
   "displayName": "new-thief-book",
   "description": "可以鼠标单击翻页,双击隐藏的better-thief-book",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.60.0"
   },
