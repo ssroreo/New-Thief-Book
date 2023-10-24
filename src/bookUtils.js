@@ -15,7 +15,7 @@ class Book {
     this.extensionContext = extensionContext;
     this.bookTitle = "";
     this.showBook = true;
-
+    this.timer = null;
     this.text = "";
 
     if (!Book.instance) {
@@ -25,6 +25,13 @@ class Book {
     }
 
     return Book.instance;
+  }
+
+  startTimer() {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.updatePage();
+    }, 5000);
   }
 
   getSize() {
@@ -124,7 +131,7 @@ class Book {
     var page_info =
       this.curr_page_number.toString() + "/" + this.totalPage.toString();
 
-    this.updatePage();
+    this.startTimer();
     return this.text.substring(this.start, this.end) + "    " + page_info;
   }
 
@@ -135,7 +142,7 @@ class Book {
     var page_info =
       this.curr_page_number.toString() + "/" + this.totalPage.toString();
 
-    this.updatePage();
+    this.startTimer();
 
     return this.text.substring(this.start, this.end) + "    " + page_info;
   }
@@ -156,7 +163,7 @@ class Book {
       var page_info =
         this.curr_page_number.toString() + "/" + this.totalPage.toString();
 
-      this.updatePage();
+      this.startTimer();
 
       return this.text.substring(this.start, this.end) + "    " + page_info;
     }
@@ -188,7 +195,7 @@ class Book {
         var page_info =
           this.curr_page_number.toString() + "/" + this.totalPage.toString();
 
-        this.updatePage();
+        this.startTimer();
 
         return this.text.substring(this.start, this.end) + "    " + page_info;
       });
