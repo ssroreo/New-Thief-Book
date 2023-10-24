@@ -152,10 +152,7 @@ function activate(context) {
 }
 
 // this method is called when your extension is deactivated
-function deactivate() {
-  let books = new Book(context);
-  books.updatePage();
-}
+function deactivate() {}
 
 module.exports = {
   activate,
